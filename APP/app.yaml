@@ -1,0 +1,46 @@
+mysql:
+  host: "localhost"
+  port: 3306
+  user: "root"
+  password: "123456"
+  database: "flask"
+redis:
+  host: "localhost"
+  port: 6379
+  db: 0
+  password: "123456"
+es:
+  switch: false
+  host: "localhost"
+  port: 9200
+  user: "elastic"
+  password: "123456"
+llm_config:
+  api_key: "sk-f1be5893308641089a20a046ea713c8c"
+  api_provider: "dashscope"
+  model_name: "qwen-turbo-latest"
+  doc_handle: "docling" # docling or mineru, if docling, set mineru_api_key to None , else mineru_api_key must be set
+  mineru_api_key: "eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFM1MTIifQ.eyJqdGkiOiIzODcwMzI2MCIsInJvbCI6IlJPTEVfUkVHSVNURVIiLCJpc3MiOiJPcGVuWExhYiIsImlhdCI6MTc1MTg1NjkxMywiY2xpZW50SWQiOiJsa3pkeDU3bnZ5MjJqa3BxOXgydyIsInBob25lIjoiIiwib3BlbklkIjpudWxsLCJ1dWlkIjoiYmY2YzFmMmItNzY1Ni00Nzg1LTgwYjEtYjNlODNjZGY4YTM1IiwiZW1haWwiOiIiLCJleHAiOjE3NTMwNjY1MTN9.nnXJHdd6CPwjxNrBAgLorX6eUkm0qlAvgfLcZ-CLG-22h3b3loC-gcRp6qfyhzjCw0VIRu6XEbJKs1p92RCk2A"
+rag_path:
+  root_path: "D:\\GitProgram\\RAG-Flask-React\\Data"
+  config_suffix: "_qwen3"
+  questions:
+    file_name: "questions.json"
+  raw_file:
+    dir_name: "pdf"
+  format_file:
+    serialized: False
+    json:
+      dir_name: "json"
+      parsed_dir_name: "parsed"
+      debug_flag: True
+      debug_dir_name: "parsed_debug"
+    merged:
+      dir_name: "merged"
+    markdown:
+      dir_name: "markdown"
+  vectors:
+    dir_name: "databases"
+    chunked_dir_name: "chunked"
+    db_dir_name: "vector_dbs"
+    bm25_dir_name: "bm25_dbs"

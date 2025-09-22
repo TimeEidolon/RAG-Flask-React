@@ -1,0 +1,35 @@
+GET http://localhost:9200/_cluster/health?pretty
+Accept: application/json
+
+###
+PUT http://localhost:9200/_cluster/settings
+Content-Type: application/json
+
+{
+  "persistent": {
+    "cluster.routing.allocation.disk.watermark.low": "90%",
+    "cluster.routing.allocation.disk.watermark.high": "95%",
+    "cluster.routing.allocation.disk.watermark.flood_stage": "98%"
+  }
+}
+
+###
+POST http://localhost:9200/financial_report/_doc
+Content-Type: application/json
+
+{
+  "title": "使用Postman操作ES",
+  "content": "这是通过Postman直接添加的数据",
+  "tags": ["elasticsearch", "postman"],
+  "created_at": "2023-07-20"
+}
+
+###
+POST http://localhost:5000/api/rag/query
+Content-Type: application/json
+
+{
+  "question": "帮我解释下最近的外卖大战是怎么回事"
+}
+
+
